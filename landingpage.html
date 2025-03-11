@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>CITY INFO </title>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+        }
+        .heading{
+
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+        .img{
+            height: 60px;
+            width: 80px;
+        border-radius: 50%;
+        margin: 10px;
+
+
+        }
+        .div{
+            display: flex;
+            background-color:rgb(225, 188, 141);
+        }
+        .line{
+            height: 2px;
+            
+
+            background-color: black;
+            margin-bottom: 0%;
+            margin-top: 0%;
+
+        
+        }
+        .img2{
+            height: 60px;
+            width: 600px;
+            margin-left: 400px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            border-radius: 20px 20px 0px 0px;
+            mix-blend-mode: color-burn;
+        }
+     .body1{
+        background-color: beige;
+        height:900px ;
+        margin-top: 0%;
+        width: 50%;
+     }
+     .inputbox{
+        margin: 30px 35%;
+        height: 30px;
+        width: 250px;
+        padding: 10px ;
+        padding-left: 20px;
+        border-radius: 20px;
+        border: 1px solid black;
+        box-shadow: 1px 1px 5px 2px black;
+        font-size: large;
+     }
+     /* .minidiv{
+
+       
+     } */
+     .btn2{
+        height: 40px;
+        width: 120px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 20px;
+        margin-top: 20px;
+        margin: 20px 45%;
+     }
+     .divmain{
+        display: block;
+        justify-content: center;
+    text-align: center;
+       
+     }
+     .container{
+        height:1000px;
+        width: 100%;
+        display: flex;
+     }
+     .body2{
+        background-color:beige;
+        height:900px ;
+       padding: 30px;
+        width: 50%;
+     }
+     .head1{
+        margin-left:  300px;
+        padding-top: 20px;
+        margin-top: 60px;
+     }
+     .btn2:hover{
+        background-color: rgb(198, 198, 109);
+        transform: scale(1.1);
+     }
+    </style>
+</head>
+<body>
+<div class="div">
+    <div>
+        <img src="image.png" class="img">
+      
+    </div>
+    <div>
+        <h1 class="heading">
+           INDIAN CITIES INFO 
+        </h1>
+    </div>
+    <div>
+        <img src="image copy 3.png" class="img2">
+    </div>
+</div>
+
+
+<hr class="line">
+
+
+<div class="container">
+<div class="body1">
+    <h1 class="head1">Enter City Name</h1>
+
+   <input type="text" id="city" placeholder="Enter City Name" class="inputbox">
+<div class="minidiv">
+    <button id="btn" onclick="find()" class="btn2">
+        serach
+    </button>
+</div>
+
+</div>
+<div class="body2">
+<div id="output" class="divmain"></div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+    <script>
+
+
+const cityInfo={
+
+    pune:{
+    Image: "https://mittalbuilders.com/wp-content/uploads/2020/12/Reasons-to-settle-down-in-Pune-1400x700.png",
+    name:"pune",
+    establishment :"Pune was established as a settlement in 937 CE. However, it gained prominence in the 17th century under the rule of Chhatrapati Shivaji Maharaj",
+    details:"Pune, often called the Oxford of the East, is a major city in Maharashtra, India. It is known for its rich history, educational institutions, IT industry, pleasant climate, and cultural significance",
+
+    "Knownas" :"Cultural Capital of Maharashtra" ,
+  " famousfor ":"Education & Research  📚"
+
+    },
+    nagpur:{
+    Image: "./img/nagpur.png",
+    name:"nagpur",
+    establishment: "Nagpur was founded in the early 18th century by the Gond King Bakht Buland Shah of Deogarh. The British East India Company took over Nagpur in the 19th century and made it the capital of the Central Provinces and Berar.",
+    details:"Nagpur is the third largest city and the winter capital of the Indian state of Maharashtra. It is the 13th largest city in India by population and according to an Oxford Economics report, Nagpur is projected to be the fifth fastest growing city in the world from 2019 to 2035 with an average growth of 8.41%",
+
+    Knownas : "Orange City of India"  ,
+  famousfor : "Zero Mile City" 
+
+    },
+    mumbai:{
+    Image: "./img/mumbai.png",
+    name:"mumbai",
+    establishment: "Mumbai was founded in the 17th century by the Portuguese. The city was named after the goddess Mumbadevi.",
+    details:"Mumbai, formerly known as Bombay, is the capital city of the Indian state of Maharashtra. Mumbai is the most populous city in India and the fourth most populous city in the world. Mumbai is the financial, commercial, and entertainment capital of India.",
+    Knownas : "City of Dreams"  ,
+    famousfor : "Bollywood 🎥" ,
+    
+        },
+    kolkata:{
+    Image: "./img/kokatta.png",
+    name:"kolkata",
+    establishment: "Kolkata was established in the late 17th century by the British East India Company. The city was the capital of British India from 1773 to 1911.",
+    details:"Kolkata, formerly known as Calcutta, is the capital of the Indian state of West Bengal. Kolkata is the commercial, cultural, and educational center of eastern India and the main port of communication for the North-East Indian states, as well as having the third-largest urban economy of India.",
+    Knownas : "City of Joy"  ,
+    famousfor : "Rosogolla 🍬" 
+    
+        },
+    chennai:{
+    Image: "./img/channei.png",
+    name:"chennai",
+    establishment: "Chennai was established in the 17th century by the British East India Company. The city was known as Madras until 1996.",
+    details:"Chennai, formerly known as Madras, is the capital of the Indian state of Tamil Nadu. Located on the Coromandel Coast off the Bay of Bengal, it is the biggest cultural, economic, and educational center of south India.",
+    Knownas : "Detroit of India"  ,
+     famousfor : "Marina Beach 🏖️" 
+    
+        },
+    delhi:{
+    Image: "./img/delhi.png",
+    name:"delhi",
+    establishment: "Delhi was established in the 6th century BCE by the Pandavas. The city was captured, destroyed, and rebuilt several times, and it was the capital of several empires.",
+    details:"Delhi, officially the National Capital Territory of Delhi, is a city and a union territory of India containing New Delhi, the capital of India. It is situated alongside the Yamuna River and is bordered by Haryana state on three sides and by Uttar Pradesh state to the east.",
+    Knownas : "City of Rallies"  ,
+    famousfor: "Red Fort 🏰" 
+    
+        },
+    jaipur:{
+    Image: "./img/jaipur.png",
+    name:"jaipur",
+    establishment: "Jaipur was established in 1727 by Maharaja Jai Singh II, the ruler of Amer. The city was named after him.",
+    details:"Jaipur is the capital and the largest city of the Indian state of Rajasthan. As of 2011, the city had a population of 3.1 million, making it the tenth most populous city in the country. Jaipur is also known as the Pink City, due to the dominant color scheme of its buildings.",
+            
+    Knownas : "Pink City"  ,
+    famousfor: "Hawa Mahal 🏯" 
+    
+        },
+     ahmedabad:{
+    Image: "./img/ahehdabad.png",
+    name:"ahmedabad",
+    establishment: "Ahmedabad was established in the 11th century by King Karandev I. The city was named after Sultan Ahmed Shah, who founded it in 1411.",
+    details:"Ahmedabad, also known as Amdavad, is the largest city and former capital of the Indian state of Gujarat. It is the administrative headquarters of the Ahmedabad district and the seat of the Gujarat High Court. Ahmedabad's population of 5,633,927 makes it the fifth-most populous city in India.",
+    "Known-as" : "Manchester of India"  ,
+    " famous for ": "Sabarmati Ashram 🏛️" 
+    
+        },
+     hyderabad:{
+    Image: "./img/hydrabad.png",
+    name:"hyderabad",
+    establishment: "Hyderabad was established in 1591 by Muhammad Quli Qutb Shah, the fifth ruler of the Qutb Shahi dynasty. The city was named after his wife, Bhagmati, who was later known as Hyder Mahal.",
+            
+            
+    details:"Hyderabad is the capital and largest city of the Indian state of Telangana and the de jure capital of Andhra Pradesh. It occupies 650 square kilometers (250 sq mi) on the Deccan Plateau along the banks of the Musi River, in the northern part of South India.",
+    Knownas: "City of Pearls"  ,
+    famousfor:"Biryani 🍲" 
+    
+        },
+    bangalore:{
+    Image: "./img/bangluru.png",
+    name:"bangalore",
+    establishment: "Bangalore was established in the 16th century by Kempe Gowda I, a feudatory ruler under the Vijayanagara Empire. The city was named after him.",
+    details:"Bangalore, officially known as Bengaluru, is the capital of the Indian state of Karnataka. It has a population of over ten million, making it a megacity and the third-most populous city and fifth-most populous urban agglomeration in India.",
+    Knownas : "Silicon Valley of India"  ,
+    famousfor: "IT Hub 🖥️" 
+    
+        },
+    lucknow:{   
+    Image: "./img/laknav.png",
+    name:"lucknow",
+    establishment: "Lucknow was established in the 18th century by Nawab Asaf-ud-Daula. The city was named after Lakshman, the younger brother of Lord Rama.",
+    details:"Lucknow is the capital city of the Indian state of Uttar Pradesh, and is also the administrative headquarters of the eponymous district and division. It is the fourteenth-most populous city and the twelfth-most populous urban agglomeration of India.",
+    Knownas : "City of Nawabs"  ,
+     famousfor : "Chikankari 👗" 
+    
+        },
+        
+}
+
+
+function find(){
+    const info =document.getElementById("city").value.toLowerCase();;
+
+    const result =document.getElementById("output");
+
+    const cityname=cityInfo[info];
+    if(!cityname){
+        alert("city not found");
+        return;
+    }
+  
+    result.innerHTML=`<img height="200px" src="${cityname.Image} "/>
+                      <h1>${cityname.name}</h1>
+                      <h2>${cityname.Knownas}</h2>
+                      <p>${cityname.establishment }</p>
+                    <h2>${cityname.details}</h2>
+                      
+                    
+    
+    
+    `
+
+
+ 
+}
+
+
+    </script>
+</body>
+</html>
